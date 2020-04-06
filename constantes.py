@@ -10,10 +10,20 @@ title_window = "macgyver"
 image_icone_perso = "ressource/images/macgyver.png"
 
 #list of game images
-#a définir
+
 
 image_homepage = "ressource/images/menu.png"
-image_background = "a définir"
-image_wall = "../ressource/images/wall.png"
-image_start = "a définir"
-image_finish = "a définir"
+image_fond = "ressource/images/image_fond.png"
+image_wall = "ressource/images/image_wall.png"
+macgyver = "ressource/images/macgyver.png"
+image_guardian = "ressource/images/gardien.png"
+image_inventary = "ressource/images/inventaire.png"
+image_win = "ressource/images/youwin.png"
+image_loose = "ressource/images/youloose.png"
+
+
+#items 
+
+ether = "ressource/images/ether.png"
+needle = "ressource/images/potion.png"
+tube = "ressource/images/tube_plastique.png"
