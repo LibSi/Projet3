@@ -27,3 +27,4 @@ image_loose = "ressource/images/youloose.png"
 ether = "ressource/images/ether.png"
 needle = "ressource/images/potion.png"
 tube = "ressource/images/tube_plastique.png"
+

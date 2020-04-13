@@ -73,18 +73,18 @@ while main_loop:
         
         
         #random placement of objects
-        
+        position = [i for i in range(112)]
+        choice = random.sample(position, 3)
         #Stuff 1
-        random_number1 = random.randint(1, 112)
-        etherposition = level.random(random_number1)
+        etherposition = level.random(choice[0])
         etherf = Stuff(ether, etherposition[0], etherposition[1])
         #Stuff 2
-        random_number2 = random.randint(1, 112)
-        tubeposition = level.random(random_number2)
+        
+        tubeposition = level.random(choice[1])
         tubef = Stuff(tube, tubeposition[0], tubeposition[1])
         #Stuff 3
-        random_number3 = random.randint(1, 112)
-        needleposition = level.random(random_number3)
+        
+        needleposition = level.random(choice[2])
         needlef = Stuff(needle, needleposition[0], needleposition[1])
         
     #loop game    

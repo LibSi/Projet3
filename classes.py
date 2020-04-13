@@ -113,8 +113,8 @@ class Mcg:
             
             
 class Stuff:
-    #Class to create a character
-
+    
+#class to create a stuff
     def __init__(self, stuff, x, y):
         
         self.stuff = pygame.image.load(stuff).convert_alpha()
@@ -122,6 +122,8 @@ class Stuff:
         self.x = x
         self.y = y
         self.direction = self.stuff
+        
+        
     
     
-            
+           
