@@ -1,7 +1,7 @@
 
 
 import pygame
-import random
+import random as rd
 from pygame.locals import *
 from constantes import *
 
@@ -10,7 +10,7 @@ class Level:
     def __init__(self, fichier):
         self.fichier = fichier
         self.structure = 0
-
+        self.free = 0
         
     def generer(self):
         with open(self.fichier, "r") as fichier:
@@ -44,29 +44,35 @@ class Level:
                     window.blit(guardian, (x,y))
                 elif sprite == '0':
                     window.blit(fond, (x,y))
-                    
+                    self.free += 1
                 num_case += 1
             num_ligne +=1
             
 #for the random position of the items
-    def random (self, number):
-        num_ligne = 0
-        counter = 0
-        for ligne in self.structure:
+    def random (self, n):
+        position = [i for i in range(1, self.free)]
+        choice = rd.sample(position, 3)
+        retour = []
+        
+        for j in range(n):
+            num_ligne = 0
+            counter = 0
+            for ligne in self.structure:
 
-            num_case = 0
-            for sprite in ligne:
+                num_case = 0
+                for sprite in ligne:
 
-                x = num_case * sprite_size
-                y = num_ligne * sprite_size
-                if sprite == '0':
-                    counter += 1
-                    if counter == number:
-                        return (x, y)
-                        
-                num_case += 1
-            num_ligne += 1
- 
+                    x = num_case * sprite_size
+                    y = num_ligne * sprite_size
+                    if sprite == '0':
+                        counter += 1
+                        if counter == choice[j]:
+                            retour.append( (x, y))
+                            
+                            
+                    num_case += 1
+                num_ligne += 1
+        return retour
 #Macguyver 
 class Mcg:
     def __init__(self, right, level):
