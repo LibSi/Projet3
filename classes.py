@@ -6,7 +6,7 @@ from pygame.locals import *
 from constantes import *
 
 class Level:
-    #creation level
+    '''Creation level'''
     def __init__(self, fichier):
         self.fichier = fichier
         self.structure = 0
@@ -27,6 +27,7 @@ class Level:
             
             
     def afficher(self, window):
+     '''Define the different structures of the maze '''
         wall = pygame.image.load(image_wall).convert()
         guardian = pygame.image.load(image_guardian).convert()
         fond = pygame.image.load(image_fond).convert()
@@ -48,8 +49,9 @@ class Level:
                 num_case += 1
             num_ligne +=1
             
-#for the random position of the items
+
     def random (self, n):
+    '''For the random position of the items'''
         position = [i for i in range(1, self.free)]
         choice = rd.sample(position, 3)
         retour = []
@@ -73,8 +75,9 @@ class Level:
                     num_case += 1
                 num_ligne += 1
         return retour
-#Macguyver 
+ 
 class Mcg:
+''' Creation MacGyver '''
     def __init__(self, right, level):
         self.right = pygame.image.load(macgyver).convert_alpha()
 
@@ -88,7 +91,7 @@ class Mcg:
         self.level = level
         
     def move(self, direction):
-    
+    '''Class who manage main character movements on the maze '''
         if direction == 'right':
             if self.case_x < (nb_sprite - 1):
                 if self.level.structure[self.case_y][self.case_x+1] != 'm':
@@ -120,7 +123,7 @@ class Mcg:
             
 class Stuff:
     
-#class to create a stuff
+'''class to create a stuff'''
     def __init__(self, stuff, x, y):
         
         self.stuff = pygame.image.load(stuff).convert_alpha()
