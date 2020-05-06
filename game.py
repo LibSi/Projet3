@@ -15,7 +15,7 @@ from constantes import *
 pygame.init()
 
 
-'''pygame window opening'''
+#pygame window opening
 window = pygame.display.set_mode((side_window, side_window))
 icone = pygame.image.load(image_icone_perso)
 pygame.display.set_icon(icone)
@@ -23,28 +23,26 @@ pygame.display.set_caption(title_window)
 pygame.key.set_repeat(1000, 1)
  
  
-'''main loop'''
+
 main_loop = True
 
 while main_loop:
-    '''load and display homepage'''
+    #load and display homepage
     homepage = pygame.image.load(image_homepage).convert()
     window.blit(homepage, (0, 0))
     pygame.display.flip()
 
-    '''reset variable'''
+   
     continue_homepage = True
     continue_game = True
     you_win = False
     you_loose = False
     count_stuff = 0
     
-    '''homepage loop'''
+    
     while continue_homepage:
         
         for event in pygame.event.get():
-        
-            '''check choice user'''
             if event.type == QUIT or event.type == KEYDOWN and event.key == K_ESCAPE:
                 continue_homepage = False
                 main_loop = False
@@ -56,18 +54,16 @@ while main_loop:
                 if event.key == K_F1:
                     continue_homepage = False
                     choix = 'n1' 
-    '''if the user press f1, then the level is launche '''               
+                               
     if choix != False:
         fond = pygame.image.load(image_fond).convert()
         window.blit(fond, (0,0))
         level = Level(choix)
         level.generer()
         level.afficher(window)
-        '''create Macguyver'''
         perso = Mcg("ressource/images/macgyver.png", level)
         
         
-        '''random placement of objects'''
         position = level.random(3)
         
         #Stuff 1
@@ -81,10 +77,8 @@ while main_loop:
         #Stuff 3
         needleposition = position[2]
         needlef = Stuff(needle, needleposition[0], needleposition[1])
-        
-    '''loop game'''    
+          
     while continue_game:
-        pygame.time.Clock().tick(30)
         
         for event in pygame.event.get():
             
@@ -107,7 +101,7 @@ while main_loop:
                 elif event.key == K_DOWN:
                     perso.move('down')
                     
-        '''inventary'''           
+                   
         if (perso.x, perso.y) == (etherf.x, etherf.y):
             etherf = Stuff(ether, 150, 0)
             count_stuff = count_stuff + 1
@@ -119,8 +113,8 @@ while main_loop:
         if (perso.x, perso.y) == (needlef.x, needlef.y):
             needlef = Stuff(needle, 210, 0)
             count_stuff = count_stuff + 1
+            #inventary
         
-        '''compare counter, if mcg inventary is 3 then user win if not it's loose'''
         if level.structure[perso.case_y][perso.case_x] == 'a':
             if count_stuff == 3:
                 continue_game = 0
@@ -128,8 +122,7 @@ while main_loop:
             else:
                 continue_game = False
                 you_loose = True
-                
-        '''display new position and stuff'''       
+                #if mcg inventary is 3 then user win if not it's loose         
         window.blit(fond, (0,0))
         level.afficher(window)
         window.blit(perso.direction, (perso.x, perso.y))
@@ -140,7 +133,7 @@ while main_loop:
         
        
                 
-    '''if the user to win'''           
+                
     while you_win:
         fond = pygame.image.load(image_win).convert()
         window.blit(fond, (0,0))  
@@ -158,7 +151,7 @@ while main_loop:
                     you_win = False
                     you_loose = False
             
-    '''game over'''               
+                  
     while you_loose:
         fond = pygame.image.load(image_loose).convert()
         window.blit(fond, (0,0))
