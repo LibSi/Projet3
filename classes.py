@@ -27,7 +27,9 @@ class Level:
             
             
     def afficher(self, window):
-        #Define the different structures of the maze 
+        '''
+        Define the different structures of the maze
+        ''' 
         wall = pygame.image.load(image_wall).convert()
         guardian = pygame.image.load(image_guardian).convert()
         fond = pygame.image.load(image_fond).convert()
@@ -51,7 +53,9 @@ class Level:
             
 
     def random (self, n):
-        #For the random position of the items
+        '''
+        For the random position of the items
+        '''
         position = [i for i in range(1, self.free)]
         choice = rd.sample(position, 3)
         retour = []
@@ -91,7 +95,10 @@ class Mcg:
         self.level = level
         
     def move(self, direction):
-       #Class who manage main character movements on the maze 
+        '''
+        Class who manage main character movements on the maze
+        ''' 
+
         if direction == 'right':
             if self.case_x < (nb_sprite - 1):
                 if self.level.structure[self.case_y][self.case_x+1] != 'm':
