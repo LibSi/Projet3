@@ -1,30 +1,30 @@
 #window setting
 
-nb_sprite = 15
-sprite_size = 30
-side_window = nb_sprite * sprite_size
+NB_SPRITE = 15
+SPRITE_SIZE = 30
+SIDE_WINDOW = NB_SPRITE * SPRITE_SIZE
 
 #window customization
 
-title_window = "macgyver"
-image_icone_perso = "ressource/images/macgyver.png"
+TITLE_WINDOW = "macgyver"
+IMAGE_ICONE_PERSO = "ressource/images/macgyver.png"
 
 #list of game images
 
 
-image_homepage = "ressource/images/menu.png"
-image_fond = "ressource/images/image_fond.png"
-image_wall = "ressource/images/image_wall.png"
-macgyver = "ressource/images/macgyver.png"
-image_guardian = "ressource/images/gardien.png"
-image_inventary = "ressource/images/inventaire.png"
-image_win = "ressource/images/youwin.png"
-image_loose = "ressource/images/youloose.png"
+IMAGE_HOMEPAGE = "ressource/images/menu.png"
+IMAGE_FOND = "ressource/images/image_fond.png"
+IMAGE_WALL = "ressource/images/image_wall.png"
+MACGYVER = "ressource/images/macgyver.png"
+IMAGE_GUARDIAN = "ressource/images/gardien.png"
+IMAGE_INVENTARY = "ressource/images/inventaire.png"
+IMAGE_WIN = "ressource/images/youwin.png"
+IMAGE_LOOSE = "ressource/images/youloose.png"
 
 
 #items 
 
-ether = "ressource/images/ether.png"
-needle = "ressource/images/potion.png"
-tube = "ressource/images/tube_plastique.png"
+ETHER = "ressource/images/ether.png"
+NEEDLE = "ressource/images/potion.png"
+TUBE = "ressource/images/tube_plastique.png"
 
