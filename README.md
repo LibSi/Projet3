@@ -1,17 +1,24 @@
 # Projet3
 
-To start the game, run game.py  
+## Installation
 
-c'est un jeu dans lequel on joue le personnage de __MacGyver__  
-l'objectif est de récolter les différents __items__ afin de passer le __gardien__ et gagner la partie.
+clone and install the contents of the file with command:   
+pip install -r requirement.txt  
+run game.py for start the game
 
-## Touches
+## Rules
 
-déplacement = les flêches  
+it's a game in which we play the character of __MacGyver__  
+the objective is to collect the different __items__ in order to pass the __guardian__ and win the game.
+
+## Control
+
+movement = keyboard arrows  
 quit = escape  
 launch game = F1  
 
 ## Modification
-Il est possible de modifier le niveau en modifiant le fichier N1  
+
+It is possible to modify the level by modifying the file N1  
 * 0 = free  
 * M = wall
