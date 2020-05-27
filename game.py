@@ -8,7 +8,7 @@ import pygame
 import random
 
 from pygame.locals import *
-from classes import *
+from level import *
 from character import *
 from stuff import *
 from constantes import *
@@ -55,7 +55,7 @@ def main():
                         continue_homepage = False
                         choix = 'n1'
         # display level
-        if choix != False:
+        if choix:
             fond = pygame.image.load(IMAGE_FOND).convert()
             window.blit(fond, (0, 0))
             level = Level(choix)
